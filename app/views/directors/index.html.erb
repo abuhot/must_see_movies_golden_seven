@@ -1,0 +1,25 @@
+<h1>List of Directors</h1>
+
+<a href="http://localhost:3000/director/new">Add a New Director</a>
+
+<table>
+  <% @list_of_directors.each do |director| %>
+  <tr>
+    <td>
+      <img src="<%= director.image_url %>" width="80">
+    </td>
+    <td>
+      <%= director.name %>
+    </td>
+    <td>
+      <a href="http://localhost:3000/directors/<%= director.id %>">full bio</a>
+    </td>
+    <td>
+      <a href="http://localhost:3000/directors/<%= director.id %>/edit">Edit</a>
+    </td>
+    <td>
+      <a href="http://localhost:3000/delete_directors/<%= director.id %>">Delete</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
